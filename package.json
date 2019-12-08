@@ -11,9 +11,9 @@
   "author": "Wadeea Kiwan",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WadeeaKiwan/BitzPrice.git"
+    "url": "git+https://github.com/WadeeaKiwan/bitzprice.git"
   },
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.4",
