@@ -1,6 +1,6 @@
 # BitzPrice
 
-This is a React App build with Next.js to render react on the server.
+This is a React App build with Next.js to render react on the server. And Deployed on ZEIT with now commands.
 
 # To Start:
 
@@ -17,3 +17,5 @@ npm run dev
 ```
 
 ## Please, visit the following link to try the app:
+
+https://bitzprice.wadeeakiwan.now.sh/
