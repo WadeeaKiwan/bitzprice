@@ -1,52 +1,75 @@
-class Prices extends React.Component {
-  state = {
-    currency: 'USD',
-  };
+import { useState } from 'react';
 
-  render() {
-    let list = '';
+const Prices = ({ bpi }) => {
+  const [state, setState] = useState('USD');
+  return (
+    <div>
+      <ul className='list-group'>
+        <li className='list-group-item'>
+          Bitcoin rate for {bpi[state].description}:{' '}
+          <span className='badge-primary badge'>{bpi[state].code}</span>{' '}
+          <strong>{bpi[state].rate}</strong>{' '}
+        </li>
+      </ul>
+      <br />
+      <select onChange={e => setState(e.target.value)} className='form-control'>
+        <option value='USD'>USD</option>
+        <option value='GBP'>GBP</option>
+        <option value='EUR'>EUR</option>
+      </select>
+    </div>
+  );
+};
 
-    if (this.state.currency === 'USD') {
-      list = (
-        <li className='list-group-item'>
-          Bitcoin rate for {this.props.bpi.USD.description}:{' '}
-          <span className='badge-primary badge'>{this.props.bpi.USD.code}</span>{' '}
-          <strong>{this.props.bpi.USD.rate}</strong>
-        </li>
-      );
-    } else if (this.state.currency === 'GBP') {
-      list = (
-        <li className='list-group-item'>
-          Bitcoin rate for {this.props.bpi.GBP.description}:{' '}
-          <span className='badge-primary badge'>{this.props.bpi.GBP.code}</span>{' '}
-          <strong>{this.props.bpi.GBP.rate}</strong>
-        </li>
-      );
-    } else if (this.state.currency === 'EUR') {
-      list = (
-        <li className='list-group-item'>
-          Bitcoin rate for {this.props.bpi.EUR.description}:{' '}
-          <span className='badge-primary badge'>{this.props.bpi.EUR.code}</span>{' '}
-          <strong>{this.props.bpi.EUR.rate}</strong>
-        </li>
-      );
-    }
+// class Prices extends React.Component {
+//   state = {
+//     currency: 'USD',
+//   };
 
-    return (
-      <div>
-        <ul className='list-group'>{list}</ul>
-        <br />
-        <select
-          onChange={e => this.setState({ currency: e.target.value })}
-          className='form-control'
-        >
-          <option value='USD'>USD</option>
-          <option value='GBP'>GBP</option>
-          <option value='EUR'>EUR</option>
-        </select>
-      </div>
-    );
-  }
-}
+//   render() {
+//     let list = '';
+
+//     if (this.state.currency === 'USD') {
+//       list = (
+//         <li className='list-group-item'>
+//           Bitcoin rate for {this.props.bpi.USD.description}:{' '}
+//           <span className='badge-primary badge'>{this.props.bpi.USD.code}</span>{' '}
+//           <strong>{this.props.bpi.USD.rate}</strong>
+//         </li>
+//       );
+//     } else if (this.state.currency === 'GBP') {
+//       list = (
+//         <li className='list-group-item'>
+//           Bitcoin rate for {this.props.bpi.GBP.description}:{' '}
+//           <span className='badge-primary badge'>{this.props.bpi.GBP.code}</span>{' '}
+//           <strong>{this.props.bpi.GBP.rate}</strong>
+//         </li>
+//       );
+//     } else if (this.state.currency === 'EUR') {
+//       list = (
+//         <li className='list-group-item'>
+//           Bitcoin rate for {this.props.bpi.EUR.description}:{' '}
+//           <span className='badge-primary badge'>{this.props.bpi.EUR.code}</span>{' '}
+//           <strong>{this.props.bpi.EUR.rate}</strong>
+//         </li>
+//       );
+//     }
+
+//     return (
+//       <div>
+//         <ul className='list-group'>{list}</ul>
+//         <br />
+//         <select
+//           onChange={e => this.setState({ currency: e.target.value })}
+//           className='form-control'
+//         >
+//           <option value='USD'>USD</option>
+//           <option value='GBP'>GBP</option>
+//           <option value='EUR'>EUR</option>
+//         </select>
+//       </div>
+//     );
+//   }
+// }
 
 export default Prices;
